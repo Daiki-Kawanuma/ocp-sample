@@ -114,7 +114,7 @@ RUN set -x \
     && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf \
     && chmod 775 /var/cache/nginx
 
-EXPOSE 80
+EXPOSE 8080
 
 STOPSIGNAL SIGTERM
 
