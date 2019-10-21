@@ -112,8 +112,7 @@ RUN set -x \
 # OpenShift用にグループを変更
     && chgrp -R root /var \    
     && chmod 775 /var/cache/nginx \
-    && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf \    
-    && sed -i "15s/^/server {\n    listen 8080;\n}\n/" /etc/nginx/nginx.conf 
+    && sed -i -e 's/listen       80;/listen       8080;/' /etc/nginx/conf.d/default.conf    
 
 EXPOSE 8080
 
