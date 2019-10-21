@@ -113,7 +113,7 @@ RUN set -x \
     && chgrp -R root /var \    
     && chmod 775 /var/cache/nginx \
     && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf \    
-    && sed -i "13s/^/    listen 8080;\n/" /etc/nginx/nginx.conf 
+    && sed -i "15s/^/    listen 8080;\n/" /etc/nginx/nginx.conf 
 
 EXPOSE 8080
 
