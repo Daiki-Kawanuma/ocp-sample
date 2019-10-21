@@ -110,9 +110,10 @@ RUN set -x \
     && ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
 # OpenShift用にグループを変更
-    && chgrp -R root /var \
+    && chgrp -R root /var \    
+    && chmod 775 /var/cache/nginx \
     && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf \
-    && chmod 775 /var/cache/nginx
+    && sed -i "1s/^/listen 8080\n/" /etc/nginx/nginx.conf
 
 EXPOSE 8080
 
