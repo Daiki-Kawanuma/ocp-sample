@@ -9,7 +9,7 @@ RUN mkdir /usr/lib/s2i && \
            -e 's/\(.*\)#error_page\( *\)404/\1error_page\2404/' \
            -e '/^ *server.*localhost;$/a\    rewrite ^\/([^\\.]+[^\/])$ $1\/ permanent;' /etc/nginx/conf.d/default.conf
 
-COPY assemble run /usr/lib/s2i/
+# COPY assemble run /usr/lib/s2i/
 
 EXPOSE 8080
 
