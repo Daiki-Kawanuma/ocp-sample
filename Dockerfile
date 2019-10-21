@@ -111,7 +111,8 @@ RUN set -x \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
 # OpenShift用にグループを変更
     && chgrp -R root /var \
-    && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf
+    && sed -ie "/user  nginx;/d" /etc/nginx/nginx.conf \
+    && chmod 755 /var/cache/nginx
 
 EXPOSE 80
 
